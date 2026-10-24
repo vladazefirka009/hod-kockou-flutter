@@ -50,22 +50,17 @@ Widget test overuje načítanie všetkých šiestich assetov a pri 60 kliknutiac
 
 Screenshoty v priečinku `screenshots/` zachytávajú dva rôzne výsledky po skutočnom kliknutí v Android emulátore.
 
-## Nahratie do Git repozitára
+## Screenshoty a výsledok overenia
 
-Ak projekt ešte nemá vzdialený repozitár, vytvorte prázdny repozitár na GitHub/GitLab/Bitbucket a v priečinku projektu spustite:
+Aplikácia bola zostavená ako Android debug APK a spustená v emulátore `Medium_Phone_API_37.0` (1080 × 2400 px). Oba zábery vznikli po kliknutí na tlačidlo v rovnakej aplikácii bez úpravy zdrojového kódu medzi hodmi.
 
-```sh
-git remote add origin <URL-vasho-repozitara>
-git push -u origin main
-```
+| Hod: 4 | Hod: 3 |
+| --- | --- |
+| <img src="screenshots/hod-4.png" width="240" alt="Padlo číslo 4"> | <img src="screenshots/hod-3.png" width="240" alt="Padlo číslo 3"> |
 
-Ak projekt získate zo ZIP-u, najskôr spustite:
+- `flutter analyze`: bez nálezov.
+- `flutter test`: test prešiel; 60 kliknutí a kontrola všetkých šiestich assetov.
+- `flutter build apk --debug --no-pub`: úspešná zostava.
+- Ručné overenie v emulátore: tlačidlo mení obrázok aj text, zachytené výsledky 4 a 3.
 
-```sh
-git init -b main
-git add .
-git commit -m "Add Flutter dice app"
-```
-
-Na odovzdanie použite URL vlastného vzdialeného repozitára a ZIP so zdrojmi. Pri súkromnom repozitári udeľte vyučujúcemu prístup.
-
+Na odovzdanie slúži tento GitHub repozitár a ZIP so všetkými zdrojmi vrátane screenshotov. Projekt neobsahuje zostavovacie cache ani lokálne cesty k SDK.
